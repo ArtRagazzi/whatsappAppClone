@@ -7,4 +7,65 @@
     android:layout_height="match_parent"
     tools:context=".PerfilActivity">
 
+    <include
+        android:id="@+id/includeToolbarPerfil"
+        layout="@layout/toolbar_customizada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_perfil"
+        app:shapeAppearanceOverlay="@style/Circulo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/includeToolbarPerfil"
+        app:srcCompat="@drawable/perfil"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="32dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/primaria"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_perfil"
+        app:layout_constraintEnd_toEndOf="@+id/iv_perfil"
+        app:srcCompat="@drawable/ic_galeria_24"
+        app:tint="@color/white" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_perfil">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite Seu Nome" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Atualizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tfNome"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
