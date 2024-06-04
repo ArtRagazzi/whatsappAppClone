@@ -1,12 +1,12 @@
-package com.artragazzi.whatsappcloneapp
+package com.artragazzi.whatsappcloneapp.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.artragazzi.whatsappcloneapp.R
 import com.artragazzi.whatsappcloneapp.databinding.ActivityCadastroBinding
 import com.artragazzi.whatsappcloneapp.model.Usuario
 import com.artragazzi.whatsappcloneapp.utils.exibirMensagemCurta
@@ -121,7 +121,7 @@ class CadastroActivity : AppCompatActivity() {
             .set(usuario)
             .addOnSuccessListener {
                 exibirMensagemCurta("Usuario cadastrado com sucesso!")
-                startActivity(Intent(applicationContext,MainActivity::class.java))
+                startActivity(Intent(applicationContext, MainActivity::class.java))
             }.addOnFailureListener {
                 exibirMensagemLonga("Erro ao cadastrar Usuario!")
             }

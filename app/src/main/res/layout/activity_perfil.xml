@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilActivity">
+    tools:context=".activities.PerfilActivity">
 
     <include
         android:id="@+id/includeToolbarPerfil"
@@ -31,7 +31,7 @@
         android:layout_marginTop="32dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/fabSelecionarImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -52,12 +52,14 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_perfil">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editNomePerfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Digite Seu Nome" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/btnAtualizar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Atualizar"

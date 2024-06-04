@@ -1,4 +1,4 @@
-package com.artragazzi.whatsappcloneapp
+package com.artragazzi.whatsappcloneapp.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,14 +6,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.artragazzi.whatsappcloneapp.R
 import com.artragazzi.whatsappcloneapp.databinding.ActivityLoginBinding
 import com.artragazzi.whatsappcloneapp.utils.exibirMensagemCurta
 import com.artragazzi.whatsappcloneapp.utils.exibirMensagemLonga
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
-import com.google.firebase.auth.FirebaseAuthUserCollisionException
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 
 class LoginActivity : AppCompatActivity() {
 
@@ -36,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
     private fun verificarUsuarioLogado() {
         val usuarioAtual = firebaseAuth.currentUser
         if(usuarioAtual != null){
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 
@@ -55,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun inicializarEventosClick(){
         binding.txtCadastro.setOnClickListener {
-            startActivity(Intent(this,CadastroActivity::class.java))
+            startActivity(Intent(this, CadastroActivity::class.java))
         }
 
         binding.btnLogar.setOnClickListener {
@@ -67,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
     private fun logarUsuario() {
         firebaseAuth.signInWithEmailAndPassword(email,senha).addOnSuccessListener {
             exibirMensagemCurta("Logado com sucesso!")
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }.addOnFailureListener { erro->
             try {
                 throw erro

@@ -1,4 +1,4 @@
-package com.artragazzi.whatsappcloneapp
+package com.artragazzi.whatsappcloneapp.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.artragazzi.whatsappcloneapp.R
 import com.artragazzi.whatsappcloneapp.adapters.ViewPagerAdapter
 import com.artragazzi.whatsappcloneapp.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
@@ -68,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                         R.id.itemPerfil ->{
                             startActivity(Intent(applicationContext, PerfilActivity::class.java))
                         }
-                        R.id.itemSair->{
+                        R.id.itemSair ->{
                             deslogarUsuario()
                         }
                     }
